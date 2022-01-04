@@ -8,8 +8,8 @@ export function Output(){
     return(
         <>
         <h1>Output</h1>
-        <p>string: {fileContent}</p>
-        <p>output: {deleteSLC(deleteComments(fileContent))}</p>
+        <p>String: <br/>{fileContent}</p>
+        <p>Output: <br/>{deleteSLC(deleteComments(fileContent))}</p>
         </>
     )
 }

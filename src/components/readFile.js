@@ -7,8 +7,8 @@ export function ReadFile(){
     const {fileContent, save} = useContext(Ctx);
    
     const showFile = async (e) => {
-      e.preventDefault()
-      setFileName(e.target.files[0].name)
+      e.preventDefault();
+      setFileName(e.target.files[0].name);
       const reader = new FileReader();
 
       reader.onload = async (e) => {
@@ -25,7 +25,7 @@ export function ReadFile(){
           <input type="file" name="file" onChange={showFile}/>
           <p>filename {filename}</p>
           <br/>
-          <Link to={`/output`}>to output</Link>
+          <Link to={`/output`}>To output</Link>
           <div>
             <p>String: <br/>{fileContent}</p>
           </div>

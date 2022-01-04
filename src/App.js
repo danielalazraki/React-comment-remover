@@ -1,5 +1,6 @@
 import {
   BrowserRouter as Router,
+  Link,
   Route, Routes
 } from "react-router-dom";
 import React, {useState, useEffect} from "react";
@@ -20,6 +21,7 @@ export function App() {
   return (
       <>
         <Ctx.Provider value={{fileContent, save}}>
+        <Link to={'/read-file'}>Navigate to read file</Link>
           <Router>
             <Routes>
               <Route path="/read-file" element={<ReadFile/>}/>
