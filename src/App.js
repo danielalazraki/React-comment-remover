@@ -13,7 +13,7 @@ export function App() {
   const [fileContent, setFileContent] = useState('nada');
 
   const save = (value) => {
-    setFileContent(value)
+    setFileContent(value);
   }
   
 

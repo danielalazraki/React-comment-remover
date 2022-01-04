@@ -14,11 +14,11 @@ export function Output(){
     )
 }
 
-function deleteComments(string) {
+const deleteComments = (string) => {
     let i = 0;
     let lastComment = 0;
-    let newString = ""
-    let closingTagNotFound = true
+    let newString = "";
+    let closingTagNotFound = true;
     
     while (i < (string.length - 1)) {
         //search for opening tag
@@ -29,21 +29,21 @@ function deleteComments(string) {
             //search for next closing tag
             for (let z = i + 2; z < (string.length - 1); z++) {
                 if (string[z] === '*' && string[z + 1] === '/') {
-                    closingTagNotFound =false
+                    closingTagNotFound = false;
                     if (string.length - 1 > z+1) {
-                        lastComment = z+2
-                        i = z+2
-                        z = string.length-1
+                        lastComment = z + 2;
+                        i = z + 2;
+                        z = string.length - 1;
                         
                     }else{
-                        lastComment = z+1
+                        lastComment = z + 1;
                     }   
                 }
             }
 
             if(closingTagNotFound){
                 newString += string.slice(i, string.length);
-                return newString
+                return newString;
             }
         }else{
            i++; 
@@ -51,22 +51,22 @@ function deleteComments(string) {
         
     }
     newString += string.slice(lastComment, (string.length));
-    return newString
+    return newString;
 }
 
 const deleteSLC = (str) => {
     let newArray = [];
-    let array = str.split("\n")
+    let array = str.split("\n");
     //iterate through each line
     array.forEach(line => {
         for(let i = 0; i < (line.length - 1); i++){
             //find comments and where
             if(line[i] === '/' && line[i+1] === '/'){
-                line = line.slice(0, i)
+                line = line.slice(0, i);
             }
         }
         newArray.push(line);
     });
-    let answer = newArray.toString().split(',').join('')
+    let answer = newArray.toString().split(',').join('');
     return answer;
 }

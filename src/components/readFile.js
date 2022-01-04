@@ -9,12 +9,12 @@ export function ReadFile(){
     const showFile = async (e) => {
       e.preventDefault()
       setFileName(e.target.files[0].name)
-      const reader = new FileReader()
+      const reader = new FileReader();
+
       reader.onload = async (e) => {
-        const text = (e.target.result)
-        save(text)
-        console.log(text)
-        
+        const text = (e.target.result);
+        save(text);
+        console.log(text);
       };
       reader.readAsText(e.target.files[0]);
     }
