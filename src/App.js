@@ -2,11 +2,12 @@ import {
   BrowserRouter as Router,
   Route, Routes
 } from "react-router-dom";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { ReadFile } from "./components/readFile";
 import { Output } from "./components/output";
 import './App.css';
 import { Ctx } from "./components/context";
+
 
 export function App() {
   const [fileContent, setFileContent] = useState('nada');
@@ -14,6 +15,7 @@ export function App() {
   const save = (value) => {
     setFileContent(value)
   }
+  
 
   return (
       <>

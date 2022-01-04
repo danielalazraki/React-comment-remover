@@ -1,11 +1,11 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect} from "react"
 import { Link } from "react-router-dom";
 import { Ctx } from "./context";
 
 export function ReadFile(){
     const [filename, setFileName ] = useState('upload file');
     const {fileContent, save} = useContext(Ctx);
-  
+   
     const showFile = async (e) => {
       e.preventDefault()
       setFileName(e.target.files[0].name)
@@ -14,8 +14,7 @@ export function ReadFile(){
         const text = (e.target.result)
         save(text)
         console.log(text)
-        let newstrings = text.split("\n"); 
-        console.log(newstrings)
+        
       };
       reader.readAsText(e.target.files[0]);
     }
