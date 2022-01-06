@@ -11,7 +11,7 @@ It displays the content of the .txt file but without comments where:
      text and more text */ 
 
 ### Single line comments:
-     //text... 
+//text... 
 
 ## To run this project:
 - npm install
