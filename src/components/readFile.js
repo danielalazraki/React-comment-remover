@@ -6,12 +6,12 @@ export function ReadFile(){
     const [filename, setFileName ] = useState('upload file');
     const {fileContent, save} = useContext(Ctx);
    
-    const showFile = async (e) => {
+    const showFile = (e) => {
       e.preventDefault();
       setFileName(e.target.files[0].name);
       const reader = new FileReader();
 
-      reader.onload = async (e) => {
+      reader.onload = (e) => {
         const text = (e.target.result);
         save(text);
         console.log(text);

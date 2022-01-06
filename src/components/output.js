@@ -25,7 +25,7 @@ const deleteComments = (string) => {
         if (string[i] === '/' && string[i + 1] === '*') {
             //Add characters found in text until opening comment tag
             newString += string.slice(lastComment, i);
-            closingTagNotFound = true
+            closingTagNotFound = true;
             //search for next closing tag
             for (let z = i + 2; z < (string.length - 1); z++) {
                 if (string[z] === '*' && string[z + 1] === '/') {

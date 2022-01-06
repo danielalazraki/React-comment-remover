@@ -21,9 +21,9 @@ export function App() {
   return (
       <>
         <Ctx.Provider value={{fileContent, save}}>
-        <Link to={'/read-file'}>Navigate to read file</Link>
           <Router>
             <Routes>
+              <Route exact path='/' element={<Home/>}/>
               <Route path="/read-file" element={<ReadFile/>}/>
               <Route path="/output" element={<Output/>}/>
             </Routes>
@@ -33,3 +33,18 @@ export function App() {
   );
 }
 
+
+function Home(){
+  return (
+    <div>
+    <h1>React Comment Remover</h1>
+    <p>This is a multi-page React app. <br/> 
+    The first page ('/read-file') has the ability to receive a .txt file and parse it into a string. <br/> 
+    The Second Page ('/output') display the content of the .txt file but without comments where: <br/>
+    - Block comments are represented as <br/>/* text more <br/>
+     text and more text */ <br/>- Single line comments are represented as <br/>
+     //text... </p>
+    <Link to={'/read-file'}>To read-file</Link>
+    </div>
+  )
+}
